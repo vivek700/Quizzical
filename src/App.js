@@ -3,6 +3,7 @@ import Quiz from "./components/Quiz"
 import './index.css'
 import React from 'react'
 import { nanoid } from 'nanoid'
+import Loading from "./components/Loading"
 
 
 export default function App() {
@@ -15,8 +16,11 @@ export default function App() {
 
     const [quizData, setQuizData] = React.useState([])
 
+    const [loading, setLoading] = React.useState(false)
+
 
     React.useEffect(() => {
+        setLoading(true)
         fetch("https://opentdb.com/api.php?amount=10&category=18")
             .then(res => res.json())
             .then(data => {
@@ -48,6 +52,7 @@ export default function App() {
 
                     }
                 })
+                setLoading(false)
                 setQuizData(quizArray)
 
 
@@ -128,21 +133,22 @@ export default function App() {
     return (
         <main>
             {QuizPage.clicked ?
-                <div>
-                    {quizElement}
-            {
-                playAgain ?
-                    <div className="stm--btn">
-                        <p>You scored {userRes.rightAns}/{userRes.totalQues} correct answers</p>
-                        <button className="play--again" onClick={playAgainf}>Play again</button>
-                    </div> : checkAns && <button onClick={() => matchAns()} className="check--ans">Check answers</button>
-            }
-                </div>
-                :
-                <div>
-                    <Intro {...QuizPage} />
+                loading ? <Loading /> :
+                    <div>
+                        {quizElement} 
+                {
+                    playAgain ?
+                        <div className="stm--btn">
+                            <p>You scored {userRes.rightAns}/{userRes.totalQues} correct answers</p>
+                            <button className="play--again" onClick={playAgainf}>Play again</button>
+                        </div> : checkAns && <button onClick={() => matchAns()} className="check--ans">Check answers</button>
+                }
+                    </div>
+                    :
+                    <div>
+                        <Intro {...QuizPage} />
 
-                </div>
+                    </div>
 
             }
         </main>

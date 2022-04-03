@@ -225,3 +225,20 @@
     
 }
 
+.loading {
+    color: #293264;
+    display: flex;
+    min-height: 900px;
+    align-items: center;
+    justify-content: center;
+    
+} 
+
+.loading-item { 
+    height: 100px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    
+    
+}
