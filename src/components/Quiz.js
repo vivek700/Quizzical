@@ -15,7 +15,7 @@ export default function Quiz(props) {
     return (
 
         <div className="quiz--main">
-            <h2 className="ques">{props.ques}</h2>
+            <h2 className="ques">Ques :- {props.ques}</h2>
             <div>
                 {optElmt}
             </div>

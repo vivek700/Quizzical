@@ -88,12 +88,45 @@
     border-bottom: solid #DBDEF0 1px;
 }
 
+.play--again {
+    margin: 0 0 0 50px;
+    width: 220px;
+    height: 65px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #4D5B9E;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+.loading {
+    color: #293264;
+    display: flex;
+    min-height: 900px;
+    align-items: center;
+    justify-content: center;
+    
+} 
+
+.loading-item { 
+    font-weight: bold;
+    font-size: 50px;
+    transition: all 0.5s ease-out;
+    
+    
+}
+
 @media screen and (max-width: 1000px) {
 
     .opt, .opt--green, .opt--ans1, .opt--red, .opt--fade  {
         display: block;
         width: 100%;
         text-align: center;
+        
         
         
     } 
@@ -108,13 +141,25 @@
     .intro , .intro p {
         font-size: 25px;
     }
+   
+          
     .stm--btn {
         flex-direction: column;
+        
+        /* display: block */
     }
     .stm--btn p {
         margin-bottom: 30px;
+        
     }
-
+    .play--again{
+        margin: 0%;
+    }
+    .loading-item {
+        font-size: 30px;
+    }
+   
+   
 }
 
 .opt, .opt--green, .opt--ans1, .opt--red, .opt--fade  {
@@ -159,21 +204,6 @@
 .ques {
     margin-bottom: 38px;
 }
-.play--again {
-    margin: 0 0 0 50px;
-    width: 220px;
-    height: 65px;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    background-color: #4D5B9E;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.5s ease-out;
-}
 
 @keyframes ans {
     from{
@@ -215,7 +245,7 @@
     animation-duration: 1.5s;
     margin: 35px 0;
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     color: #293264;
@@ -225,20 +255,3 @@
     
 }
 
-.loading {
-    color: #293264;
-    display: flex;
-    min-height: 900px;
-    align-items: center;
-    justify-content: center;
-    
-} 
-
-.loading-item { 
-    height: 100px;
-    width: 100px;
-    font-weight: bold;
-    font-size: 50px;
-    
-    
-}
