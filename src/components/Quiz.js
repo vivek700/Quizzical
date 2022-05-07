@@ -2,6 +2,8 @@
 import Option from "./Option"
 
 export default function Quiz(props) {
+
+    console.log(props)
     
     const optElmt = props.opt.map((item) => <Option
         opt={item}

@@ -128,6 +128,7 @@ export default function App() {
             clicked: true
         })
         )
+        document.title = "Quiz | Quizzical"
     }
 
     return (
